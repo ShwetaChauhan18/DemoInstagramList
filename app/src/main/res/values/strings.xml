@@ -7,4 +7,12 @@
     <string name="record">record</string>
     <string name="user">user</string>
     <string name="second_tab_here">Second Tab Here</string>
+    <string name="about_us">About Us</string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="my_downloads">My Downloads</string>
+    <string name="discover_people">Discover People</string>
+    <string name="logout">Logout</string>
+    <string name="change_password">Change Password</string>
+    <string name="rachel_muldoon">Rachel Muldoon</string>
+    <string name="user_name">\@Rachel02</string>
 </resources>
