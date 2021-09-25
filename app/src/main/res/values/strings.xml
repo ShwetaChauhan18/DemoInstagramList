@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">DemoInstragram</string>
+    <string name="profile_image_description">Profile Image</string>
+    <string name="home">home</string>
+    <string name="news">news</string>
+    <string name="add">add</string>
+    <string name="record">record</string>
+    <string name="user">user</string>
+</resources>
