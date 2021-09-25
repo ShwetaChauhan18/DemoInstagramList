@@ -18,7 +18,6 @@ package com.shweta.app.ui.adapter
 import android.view.View
 import com.shweta.app.R
 import com.shweta.app.base.BaseRecyclerAdapter
-import com.shweta.app.model.data.User
 import com.shweta.app.model.response.PostResponseItem
 
 class PostAdapter : BaseRecyclerAdapter<PostResponseItem>() {

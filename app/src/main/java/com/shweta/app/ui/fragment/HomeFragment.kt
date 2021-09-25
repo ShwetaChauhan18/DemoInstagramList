@@ -1,4 +1,4 @@
-package com.shweta.app.ui.activity.fragment
+package com.shweta.app.ui.fragment
 
 import androidx.fragment.app.viewModels
 import com.shweta.app.R

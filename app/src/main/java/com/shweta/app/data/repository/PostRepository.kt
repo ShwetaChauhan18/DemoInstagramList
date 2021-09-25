@@ -16,8 +16,6 @@
 package com.shweta.app.data.repository
 
 import com.shweta.app.data.remote.ApiService
-import com.shweta.app.model.data.User
-import com.shweta.app.model.response.PostResponse
 import com.shweta.app.model.response.PostResponseItem
 import com.shweta.app.utils.extension.response
 import java.util.ArrayList
@@ -25,9 +23,7 @@ import javax.inject.Inject
 import javax.inject.Singleton
 
 interface PostRepository {
-    /**
-     * Loads [List] of [User]
-     */
+
     suspend fun loadData(): ArrayList<PostResponseItem>
 }
 

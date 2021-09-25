@@ -16,7 +16,6 @@
 package com.shweta.app.model.response
 
 import com.google.gson.annotations.SerializedName
-import com.shweta.app.model.data.User
 
 class PostResponse : ArrayList<PostResponseItem>()
 
