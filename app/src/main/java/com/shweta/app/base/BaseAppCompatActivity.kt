@@ -16,6 +16,7 @@
 package com.shweta.app.base
 
 import android.os.Bundle
+import android.view.View
 import androidx.annotation.LayoutRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
@@ -25,7 +26,7 @@ import com.shweta.app.BR
 /**
  * Base activity for all activities.
  */
-abstract class BaseAppCompatActivity<Binding : ViewDataBinding, ViewModel : BaseViewModel> : AppCompatActivity() {
+abstract class BaseAppCompatActivity<Binding : ViewDataBinding, ViewModel : BaseViewModel> : AppCompatActivity(), View.OnClickListener {
 
     protected lateinit var binding: Binding
     protected abstract val viewModel: ViewModel
@@ -59,6 +60,7 @@ abstract class BaseAppCompatActivity<Binding : ViewDataBinding, ViewModel : Base
         binding.apply {
             lifecycleOwner = this@BaseAppCompatActivity
             setVariable(BR.viewModel, viewModel)
+            //setVariable(BR.clickHandler, this)
         }
         binding.executePendingBindings()
         initialize()

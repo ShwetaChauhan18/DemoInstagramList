@@ -9,6 +9,10 @@
             name="data"
             type="com.shweta.app.model.response.PostResponseItem" />
 
+        <variable
+            name="clickHandler"
+            type="android.view.View.OnClickListener" />
+
     </data>
 
     <androidx.cardview.widget.CardView
@@ -104,7 +108,20 @@
                 app:isCircle="@{false}"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/location" />
+                app:layout_constraintTop_toBottomOf="@+id/location"
+                app:showUnlessInvisible="@{data.posttype == 2}" />
+
+            <VideoView
+                android:id="@+id/videoView"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_150sdp"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:onClick="@{clickHandler::onClick}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/location"
+                app:showUnlessGone="@{data.posttype == 1}" />
 
             <LinearLayout
                 android:id="@+id/other_views"

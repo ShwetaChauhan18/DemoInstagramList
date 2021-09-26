@@ -18,13 +18,17 @@
             name="rightActionTitle"
             type="String" />
 
+        <variable
+            name="clickHandler"
+            type="android.view.View.OnClickListener" />
+
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/toolbar_layout"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="@color/purple_500"
+        android:background="@drawable/bg_toolbar"
         android:paddingHorizontal="@dimen/space_small"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -36,6 +40,7 @@
             android:layout_height="@dimen/_20sdp"
             android:layout_marginStart="@dimen/_8sdp"
             android:textAlignment="viewStart"
+            android:onClick="@{clickHandler::onClick}"
             app:layout_constraintBottom_toBottomOf="@+id/tv_title"
             app:layout_constraintEnd_toStartOf="@+id/tv_title"
             app:layout_constraintHorizontal_bias="0.0"

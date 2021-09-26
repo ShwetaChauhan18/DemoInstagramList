@@ -15,4 +15,6 @@
     <string name="change_password">Change Password</string>
     <string name="rachel_muldoon">Rachel Muldoon</string>
     <string name="user_name">\@Rachel02</string>
+    <string name="nav_open">Open</string>
+    <string name="nav_close">Close</string>
 </resources>

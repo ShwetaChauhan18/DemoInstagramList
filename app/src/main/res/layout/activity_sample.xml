@@ -9,6 +9,10 @@
             name="viewModel"
             type="com.shweta.app.viewmodel.SampleViewModel" />
 
+        <variable
+            name="clickHandler"
+            type="android.view.View.OnClickListener" />
+
     </data>
 
     <androidx.drawerlayout.widget.DrawerLayout
@@ -21,11 +25,13 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:background="#ffffff"
             tools:context=".ui.activity.SampleActivity">
 
             <include
                 android:id="@+id/toolbar_layout"
                 layout="@layout/layout_toolbar_action"
+                app:clickHandler="@{clickHandler}"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -53,20 +59,21 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:menu="@menu/overflow_menu" />
 
-            <com.google.android.material.navigation.NavigationView
-                android:id="@+id/nav_view"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_gravity="start"
-                android:background="@color/purple_200"
-                android:fitsSystemWindows="true"
-                app:headerLayout="@layout/nav_header_main"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:menu="@menu/drawer_menu" />
-
-
         </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.google.android.material.navigation.NavigationView
+            android:id="@+id/nav_view"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:background="@drawable/gradient"
+            app:headerLayout="@layout/nav_header_main"
+            app:itemIconTint="@color/white"
+            app:itemTextColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:menu="@menu/drawer_menu" />
+
     </androidx.drawerlayout.widget.DrawerLayout>
 </layout>

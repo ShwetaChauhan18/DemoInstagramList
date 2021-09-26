@@ -15,7 +15,10 @@
 */
 package com.shweta.app.ui.adapter
 
+import android.net.Uri
 import android.view.View
+import android.widget.MediaController
+import android.widget.VideoView
 import com.shweta.app.R
 import com.shweta.app.base.BaseRecyclerAdapter
 import com.shweta.app.model.response.PostResponseItem
@@ -24,11 +27,27 @@ class PostAdapter : BaseRecyclerAdapter<PostResponseItem>() {
     override fun getLayoutIdForType(viewType: Int): Int = R.layout.item_user
 
     override fun onItemClick(view: View?, adapterPosition: Int) {
-        /* no-op */
+        when(view?.id) {
+            R.id.videoView -> {
+                playVideo(view, arrayList[adapterPosition])
+            }
+        }
     }
 
     override fun areItemsSame(oldItem: PostResponseItem, newItem: PostResponseItem): Boolean {
         return oldItem == newItem
     }
 
+    private fun playVideo(view: View?, postResponseItem: PostResponseItem) {
+        if (postResponseItem.posttype == 2) {
+            (view as VideoView).apply {
+                setVideoURI(Uri.parse(postResponseItem.content))
+                val mediaController = MediaController(view.context)
+                mediaController.setAnchorView(this)
+                mediaController.setMediaPlayer(this)
+                setMediaController(mediaController)
+                start()
+            }
+        }
+    }
 }
