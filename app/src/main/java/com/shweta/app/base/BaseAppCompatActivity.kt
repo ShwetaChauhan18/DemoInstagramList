@@ -60,7 +60,6 @@ abstract class BaseAppCompatActivity<Binding : ViewDataBinding, ViewModel : Base
         binding.apply {
             lifecycleOwner = this@BaseAppCompatActivity
             setVariable(BR.viewModel, viewModel)
-            //setVariable(BR.clickHandler, this)
         }
         binding.executePendingBindings()
         initialize()
