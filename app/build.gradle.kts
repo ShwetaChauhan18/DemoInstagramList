@@ -74,6 +74,19 @@ android {
     kotlinOptions {
         jvmTarget = JavaVersion.VERSION_1_8.toString()
     }
+    sourceSets {
+        getByName("main") {
+            java {
+                srcDirs("src/main/java", "src/test", "src/test/java")
+            }
+        }
+    }
+
+    testOptions {
+        unitTests {
+            isIncludeAndroidResources = true
+        }
+    }
 }
 
 dependencies {
@@ -117,10 +130,6 @@ dependencies {
     // Gson
     implementation(Libs.GSON)
 
-    // AppCenter
-    implementation(Libs.APPCENTER_ANALYTICS)
-    implementation(Libs.APPCENTER_CRASHES)
-
     // Timber
     implementation(Libs.TIMBER)
 
@@ -129,15 +138,6 @@ dependencies {
 
     // Kotlin Reflect
     implementation(kotlin(Libs.REFLECT))
-
-    // Alerter
-    implementation(Libs.ALERTER)
-
-    // Loading Button
-    implementation(Libs.LOADING_BUTTON)
-
-    // Shimmer
-    implementation(Libs.SHIMMER)
 
     // Sdp/ssp
     implementation(Libs.INTUIT_SSP)
@@ -160,5 +160,7 @@ dependencies {
     androidTestImplementation(Libs.TEST_RULES)
     androidTestImplementation(Libs.ESPRESSO_CORE)
     androidTestImplementation(Libs.ESPRESSO_CONTRIB)
+
+    debugImplementation("androidx.fragment:fragment-testing:1.3.6")
     
 }

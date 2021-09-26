@@ -19,12 +19,7 @@ import android.app.Application
 import android.net.ConnectivityManager
 import android.net.Network
 import android.net.NetworkRequest
-import android.util.Log
-import com.microsoft.appcenter.AppCenter
-import com.microsoft.appcenter.analytics.Analytics
-import com.microsoft.appcenter.crashes.Crashes
 import com.shweta.app.utils.NetworkUtil
-import com.shweta.app.utils.ProductFlavor
 import dagger.hilt.android.HiltAndroidApp
 import timber.log.Timber
 
@@ -34,19 +29,9 @@ class DemoInstragramApp : Application() {
     override fun onCreate() {
         super.onCreate()
 
-        initAppCenter()
         initTimber()
         observeNetwork()
     }
-
-    private fun initAppCenter() {
-        if (ProductFlavor.CURRENT == ProductFlavor.Flavor.DEV) {
-            AppCenter.setLogLevel(Log.VERBOSE)
-        }
-    }
-
-    private fun isFlavorProductionOrQA(): Boolean = ProductFlavor.CURRENT == ProductFlavor.Flavor.QA ||
-            ProductFlavor.CURRENT == ProductFlavor.Flavor.PRODUCTION
 
     private fun initTimber() {
         if (BuildConfig.DEBUG) {
@@ -56,8 +41,8 @@ class DemoInstragramApp : Application() {
     }
 
     /**
-    * Observe network state.
-    */
+     * Observe network state.
+     */
     private fun observeNetwork() {
         val cm: ConnectivityManager = getSystemService(CONNECTIVITY_SERVICE) as ConnectivityManager
         val networkRequest = NetworkRequest.Builder().build()
